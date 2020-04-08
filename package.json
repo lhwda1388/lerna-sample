@@ -1,0 +1,22 @@
+{
+  "name": "lerna-sample",
+  "private": true,
+  "scripts": {
+    "bootstrap": "lerna bootstrap",
+    "build": "cross-env NODE_ENV=production lerna run build",
+    "build:dev": "cross-env NODE_ENV=development lerna run build:dev",
+    "build:test": "cross-env NODE_ENV=development lerna run build:test",
+    "dev": "cross-env NODE_ENV=development lerna run dev",
+    "reset-modules": "lerna clean && rimraf node_modules/ yarn.lock",
+    "reset-yarn": "yarn cache clean",
+    "reset": "yarn reset-modules && yarn reset-yarn"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "cross-env": "^7.0.2",
+    "lerna": "^3.20.2",
+    "rimraf": "^3.0.2"
+  }
+}
